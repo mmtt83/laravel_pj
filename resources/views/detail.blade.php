@@ -26,7 +26,7 @@
                 <!--申し込み/見送り/戻るボタン-->
                 <div class="well well-sm">
                     <!--申し込みボタン-->
-                    <form action="{{ url( 'post/'.$post->id )}}" method="POST">
+                    <form action="{{ url( 'detail/'.$post->id )}}" method="POST">
                         {{ csrf_field() }}
                         <button type="submit" class="btn btn-danger">
                             申し込み
@@ -34,7 +34,7 @@
                     </form>
                     <!--戻るボタン-->
                     <div>
-                        <a class="btn btn-link pull-right" href="{{url('/posts_list')}}">戻る</a>
+                        <a class="btn btn-link pull-right" href="{{url('/lists')}}">戻る</a>
                     </div>
                     <!--id値を送信-->
                     <input type="hidden" name="id" value="{{$post->id}}" />

@@ -19,5 +19,10 @@ class Post extends Model
         return $this->belongsTo(Category::class); //talk(投稿)は必ず一つのカテゴリーに属すため
     }
     
+    //Usersテーブルとの多対多リレーション
+    public function apply_user(){
+        return $this->belongsToMany('App\Models\User');
+    }
+    
     
 }

@@ -49,6 +49,8 @@ Route::delete('/admin/post/{post}',[PostsController::class, 'destroy']);
 //投稿者用：登録詳細画面
 Route::get('/admin/posts_detail/{id}', [PostsController::class, 'show']);
 
+//申し込み
+Route::post('detail/{post_id}', [PostController::class,'apply']);
 
 Auth::routes();
 

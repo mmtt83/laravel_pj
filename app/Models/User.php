@@ -46,4 +46,9 @@ class User extends Authenticatable
     public function posts(){
         return $this->hasMany('App\Models\Post');
     }
+    
+    //Postsテーブルとの多対多リレーション
+    public function apply_posts(){
+        return $this->belongsToMany('App\Models\Post');
+    }
 }

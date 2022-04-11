@@ -157,4 +157,19 @@ class PostsController extends Controller
         $post->delete();
         return redirect('admin/posts_list');
     }
+    
+    //申し込み
+    public function apply($post_id){
+        //ログイン中のユーザーを取得
+        $user = Auth::user();
+        
+        //申し込みする投稿
+        $post = Post::find($post_id);
+        
+        //リレーションの登録
+        $post->apply_user()->attach($user);
+        
+        return redirect('/detail');
+        
+    }
 }

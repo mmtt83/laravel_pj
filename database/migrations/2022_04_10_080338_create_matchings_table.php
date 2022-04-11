@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('matchings', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('post_id');
-            $table->integer('request_user_id');
+            $table->unsignedBigInteger('post_id');
+            $table->unsignedBigInteger('request_user_id');
             $table->boolean('is_match');
         });
     }
