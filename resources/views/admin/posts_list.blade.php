@@ -26,11 +26,11 @@
                     <img src="/upload/{{ $post->cover_img}}" width="100">
                 </div>
                 <!--詳細ボタン-->
-                <div><a class="btn btn-info" href="{{ url('posts_detail/'.$post->id) }}">詳細</a></div>
+                <div><a class="btn btn-info" href="{{ url('admin/posts_detail/'.$post->id) }}">詳細</a></div>
                 <!--登録編集ボタン-->
-                <div><a class="btn btn-primary" href="{{ url('posts_edit/'.$post->id) }}">更新</a></div>
+                <div><a class="btn btn-primary" href="{{ url('admin/posts_edit/'.$post->id) }}">更新</a></div>
                 <!--登録削除ボタン-->
-                <form action="{{ url( 'post/'.$post->id )}}" method="POST">
+                <form action="{{ url( 'admin/posts/'.$post->id )}}" method="POST">
                     {{ csrf_field() }}
                     {{ method_field('DELETE')}}
                     <button type="submit" class="btn btn-danger">

@@ -10,7 +10,7 @@ class TalksController extends Controller
     //クライアント側 一覧表示
     public function index(){
         $posts = Post::orderBy('created_at', 'desc')->get();
-        return view('lists',['posts'=>$posts]);
+        return view('index',['posts'=>$posts]);
     }
     
     //クライアント側 詳細表示

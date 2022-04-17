@@ -1,0 +1,81 @@
+:root{
+    --font-family-sans-serif: "Helvetica Neue", Helvetica, Arial, "游ゴシック体", "Yu Gothic", YuGothic, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+    --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+body {
+    font-family: var(--font-family-sans-serif);
+}
+
+h1, h2, h3,h4, h5, h6{
+    font-family: var(--font-family-sans-serif);
+}
+a {
+    color: #212529; /*--bs-gray-900指定の色*/
+    text-decoration: none;
+}
+.btn-prcolor{
+    color:#fff !important;
+    background-color: #00C4BE;
+}
+.py-4 {
+    padding-top: 0rem !important; 
+    padding-bottom: 1.5rem !important;
+}
+/*サイトロゴ部分*/
+.site_title{
+    font-family: 'Niconne', cursive,'Noto Sans JP', sans-serif;
+    font-size: 3rem;
+    color:#00C4BE !important;
+}
+/*コンテンツタイトル*/
+.content_title{
+    margin:20px 0 10px;
+}
+.title_en {
+    font-family: 'Niconne', cursive,'Noto Sans JP', sans-serif;
+    font-size: calc(2.5rem + 1.2vw);
+    color:#00C4BE;
+}
+
+.title_ja {
+    font-size: calc(0.5rem + 1.2vw);
+    color:#6c757d; /*--bs-gray: 指定の色*/
+}
+/*メインビジュアル*/
+.mv{
+    width:100%;
+}
+
+.col-sm-4{
+    margin: 0 10px 20px; 
+}
+.card{
+    border-radius: 1rem;
+}
+/*ポスト一覧画面*/
+.card-title{
+    font-weight: bold;
+}
+
+.category{
+    border-radius:30px;
+    background-color:#00C4BE;
+    color: #fff;
+    padding:5px 20px;
+}
+.card-img-top{
+    width:100%;
+    height:200px;
+    object-fit: contain;
+}
+
+/*ポスト表示画面*/
+.post_img{
+    
+}
+.post_img img{
+    width:100%;
+    height:150px;
+    object-fit: contain;
+}

@@ -20,7 +20,10 @@ class PostsController extends Controller
     public function index()
     {
         //全ての投稿を取得
-        $posts = Post::orderBy('created_at', 'desc')->get();
+        //$posts = Post::orderBy('created_at', 'desc')->get();
+        
+        //ユーザーが投稿した投稿のみを取得
+        $posts = \Auth::user()->posts;
         
         return view('admin/posts_list',['posts'=>$posts]);
     }
@@ -60,7 +63,7 @@ class PostsController extends Controller
         $file = $request->file('cover_img');
         if(!empty($file)){
             $filename = $file->getClientOriginalName();   //ファイル名を取得
-            $move = $file->move('./admin/upload/',$filename); //ファイルを移動
+            $move = $file->move('./upload/',$filename); //ファイルを移動
         }else{
             $filename = "";
         }
@@ -169,7 +172,7 @@ class PostsController extends Controller
         //リレーションの登録
         $post->apply_user()->attach($user);
         
-        return redirect('/detail');
+        return redirect('detail/'.$post->id);
         
     }
 }

@@ -5,6 +5,8 @@ use App\Models\Post;
 use Illuminate\Http\Request;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\TalksController;
+use App\Http\Controllers\MatchingsController;
+use App\Http\Controllers\AdmatchingsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,12 +20,12 @@ use App\Http\Controllers\TalksController;
 */
 
 //TOPページ
-Route::get('/', function(){
-    return view('welcome');
-});
+// Route::get('/', function(){
+//     return view('index');
+// });
 
 //クライアント側：一覧表示
-Route::get('/lists', [TalksController::class, 'index']);
+Route::get('/', [TalksController::class, 'index']);
 //クライアント側：詳細表示
 Route::get('/detail/{id}', [TalksController::class, 'show']);
 
@@ -50,7 +52,13 @@ Route::delete('/admin/post/{post}',[PostsController::class, 'destroy']);
 Route::get('/admin/posts_detail/{id}', [PostsController::class, 'show']);
 
 //申し込み
-Route::post('detail/{post_id}', [PostController::class,'apply']);
+Route::post('detail/{post_id}', [PostsController::class,'apply']);
+
+//クライアント側マッチング
+Route::get('/matching', [MatchingsController::class, 'index']);
+
+//提供者側マッチング
+Route::get('/admin/admatching', [AdmatchingsController::class, 'index']);
 
 Auth::routes();
 
